@@ -3,9 +3,9 @@ app = Flask(__name__)
 # Required to use Flask sessions and the debug toolbar
 app.secret_key = "ABC"
 
-@app.before_request
-def before_request():
-	pass
+# @app.before_request
+# def before_request():
+	
 
 @app.route('/login', methods=["POST"])
 def login():
@@ -16,26 +16,35 @@ def login():
 
     user = User.query.filter(User.username==username).first()
 
-    return True
+    result = True
+    return jsonify(result)
 
 
 @app.route('/login-with-face', methods=["POST"])
 def login-face():
 	
-
-	return True
+    result = True
+    return jsonify(result)
 
 @app.route('/upload-potential-item', methods=["POST"])
 def upload-potential-item():
-	pass
+	
+    result = True
+    return jsonify(result)
+
 
 @app.route('/inventroy-by-location' methods=["GET"])
 def inventroy-by-location():
-	pass
+	
+    result = True
+    return jsonify(result)
+
 
 @app.route('/inventory-for-car', methods=["GET"])
 def inventory():
-	pass
+	
+    result = True
+    return jsonify(result)
 
 
 
