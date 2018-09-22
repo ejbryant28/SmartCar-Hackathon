@@ -57,7 +57,11 @@ class Items(db.Model):
 	date_taken = db.Column(db.DateTime, nullable=True)
 
 
-	# donator = db.relationship('User', backref=)
+	item = db.relationship('Donatable')
+	car = db.relationship('Car')
+	donator = db.relationship('User')
+	consumer = db.relationship('User')
+
 
 
 
