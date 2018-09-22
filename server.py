@@ -1,11 +1,24 @@
+CLIENT_ID = 'abf7a59f-c6fa-4225-af72-94531be7fec9'
+CLIENT_SECRET = '83e2f996-17b7-4888-a127-ca7f37c6cf9e'
+
 app = Flask(__name__)
+
+client = smartcar.AuthClient(
+    client_id=CLIENT_ID,
+    client_secret=CLIENT_SECRET,
+    redirect_uri='http://localhost:8000/callback',
+    scope=['read_vehicle_info', 'read_location', 'read_odometer']
+)
 
 # Required to use Flask sessions and the debug toolbar
 app.secret_key = "ABC"
 
 # @app.before_request
 # def before_request():
-	
+
+# @app.route('receive-smart-car')
+# def receive_result():
+
 
 @app.route('/login', methods=["POST"])
 def login():
@@ -33,7 +46,7 @@ def upload-potential-item():
     return jsonify(result)
 
 
-@app.route('/inventroy-by-location' methods=["GET"])
+@app.route('/inventory-by-location' methods=["GET"])
 def inventroy-by-location():
 	
     result = True
