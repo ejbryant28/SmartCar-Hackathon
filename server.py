@@ -16,29 +16,24 @@ def login():
 
     user = User.query.filter(User.username==username).first()
 
-    if user is None:
-
-    	flash("Ooops. Try entering again.")
-        return redirect('/login')
-
-    elif user.password == password:
-    	flash("You're logged in")
-    	return redirect('/login')
-
-    else:
-    	flash("Password doesn't match. Try again")
-    	return redirect('/upload-potential-item')
+    return True
 
 
 @app.route('/login-with-face', methods=["POST"])
 def login-face():
-	pass
+	
+
+	return True
 
 @app.route('/upload-potential-item', methods=["POST"])
 def upload-potential-item():
 	pass
 
-@app.route('/inventory', methods=["GET"])
+@app.route('/inventroy-by-location' methods=["GET"])
+def inventroy-by-location():
+	pass
+
+@app.route('/inventory-for-car', methods=["GET"])
 def inventory():
 	pass
 
